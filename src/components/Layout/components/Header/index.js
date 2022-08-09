@@ -34,6 +34,21 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faLanguage} />,
         title: 'English',
+        subMenu: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -53,6 +68,17 @@ function Header() {
             setSearchResult([1, 2, 3, 4]);
         }, 1000);
     }, []);
+
+    //Handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //handle
+                break;
+            default:
+                throw new Error('Invalid menuItem type');
+        }
+    };
 
     return (
         <header className={cx('wrapper')}>
@@ -89,7 +115,7 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-icon')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
