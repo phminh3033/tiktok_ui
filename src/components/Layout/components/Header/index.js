@@ -17,7 +17,7 @@ import {
     faGear,
     faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion, faCircleUser, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faCircleQuestion, faCircleUser } from '@fortawesome/free-regular-svg-icons';
 
 //Tippy library
 import Tippy from '@tippyjs/react';
@@ -32,6 +32,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountsItem from '~/components/AccountsItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Images';
+import { MessagesIcon, MailBoxIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -154,7 +156,12 @@ function Header() {
                             </Tippy>
                             <Tippy content="Messages">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessagesIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy content="Hộp thư">
+                                <button className={cx('action-btn')}>
+                                    <MailBoxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -167,9 +174,9 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/64ebfeec1fb7d26a4c67c624849edb30.jpeg?x-expires=1660266000&x-signature=Aqg9hZ168eEfMnvjfbzbhJd15S8%3D"
+                            <Image
                                 className={cx('user-ava')}
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/64ebfeec1fb7d26a4c67c624849edb30.jpeg?x-expires=1660266000&x-signature=Aqg9hZ168eEfMnvjfbzbhJd15S8%3D"
                                 alt="Nguyen Van A"
                             />
                         ) : (
