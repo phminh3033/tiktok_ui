@@ -11,6 +11,9 @@ import HeadlessTippy from '@tippyjs/react/headless';
 //React hooks
 import { useEffect, useState, useRef } from 'react';
 
+//Custom hooks
+import { useDebounce } from '~/hooks';
+
 //components
 import { SearchIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -26,15 +29,17 @@ function Search() {
 
     const inputRef = useRef();
 
+    const debounceValue = useDebounce(searchValue, 500);
+
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounceValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${searchValue}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debounceValue}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearchResult(res.data);
@@ -43,7 +48,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [searchValue]);
+    }, [debounceValue]);
 
     const handleClear = () => {
         setSearchValue('');
