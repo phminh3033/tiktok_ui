@@ -15,6 +15,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion, faCircleUser } from '@fortawesome/free-regular-svg-icons';
 
+//React library
+import { Link } from 'react-router-dom';
+
 //Tippy library
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
@@ -25,6 +28,8 @@ import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import { UploadIcon, MessagesIcon, MailBoxIcon } from '~/components/Icons';
 import Search from '../Search';
+
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -101,7 +106,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok logo" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok logo" />
+                </Link>
 
                 <Search />
 
