@@ -27,7 +27,7 @@ import Button from '~/components/Button/Button';
 import Menu from '~/components/Popper/Menu/Menu';
 import Image from '~/components/Image/Image';
 import { UploadIcon, MessagesIcon, MailBoxIcon } from '~/components/Icons';
-import Search from '../Search';
+import Search from '../Search/Search';
 
 import config from '~/config';
 

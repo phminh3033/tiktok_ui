@@ -1,7 +1,7 @@
 //Validate data type of the props
 import PropTypes from 'prop-types';
 
-import Header from '~/layouts/components/Header';
+import Header from '~/layouts/components/Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 
 import classNames from 'classnames/bind';
