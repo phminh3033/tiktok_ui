@@ -1,3 +1,6 @@
+//Validate data type of the props
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames/bind';
 import styles from './AccountsItem.module.scss';
 
@@ -24,5 +27,9 @@ function AccountsItem({ data }) {
         </Link>
     );
 }
+
+AccountsItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AccountsItem;

@@ -1,3 +1,6 @@
+//Validate data type of the props
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 
@@ -65,5 +68,22 @@ function Button({
         </Comp>
     );
 }
+
+Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    rounded: PropTypes.bool,
+    text: PropTypes.bool,
+    disable: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
+};
 
 export default Button;

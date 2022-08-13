@@ -1,3 +1,6 @@
+//Validate data type of the props
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames'; //Allows to write class names with '-' => Ex: post-item
 import styles from './Image.module.scss';
 
@@ -21,5 +24,12 @@ const Image = forwardRef(({ src, alt, className, fallback: customFallback = imag
         />
     );
 });
+
+Image.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string,
+    className: PropTypes.string,
+    fallback: PropTypes.string,
+};
 
 export default Image;
