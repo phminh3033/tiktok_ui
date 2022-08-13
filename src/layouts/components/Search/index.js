@@ -3,7 +3,7 @@ import styles from './Search.module.scss';
 
 //FontAwesome Icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 //Tippy library
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -21,7 +21,7 @@ import { useDebounce } from '~/hooks';
 import { SearchIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountsItem from '~/components/AccountsItem';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchService from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 
@@ -44,7 +44,7 @@ function Search() {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.search(debounceValue);
+            const result = await searchService.search(debounceValue);
 
             setSearchResult(result);
             setLoading(false);
