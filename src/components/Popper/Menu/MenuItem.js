@@ -5,7 +5,7 @@ import classNames from 'classnames/bind'; //Allows to write class names with '-'
 import styles from './Menu.module.scss';
 
 //Component
-import Button from '~/components/Button';
+import Button from '~/components/Button/Button';
 
 const cx = classNames.bind(styles);
 

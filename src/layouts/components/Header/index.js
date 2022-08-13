@@ -23,9 +23,9 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
 //components
-import Button from '~/components/Button';
-import Menu from '~/components/Popper/Menu';
-import Image from '~/components/Image';
+import Button from '~/components/Button/Button';
+import Menu from '~/components/Popper/Menu/Menu';
+import Image from '~/components/Image/Image';
 import { UploadIcon, MessagesIcon, MailBoxIcon } from '~/components/Icons';
 import Search from '../Search';
 

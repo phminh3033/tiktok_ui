@@ -20,7 +20,7 @@ import { useDebounce } from '~/hooks';
 //components
 import { SearchIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountsItem from '~/components/AccountsItem';
+import AccountsItem from '~/components/AccountsItem/AccountsItem';
 import * as searchService from '~/services/searchService';
 
 const cx = classNames.bind(styles);

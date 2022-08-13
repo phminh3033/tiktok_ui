@@ -7,7 +7,7 @@ import styles from './AccountsItem.module.scss';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Image from '~/components/Image';
+import Image from '~/components/Image/Image';
 
 import { Link } from 'react-router-dom';
 
